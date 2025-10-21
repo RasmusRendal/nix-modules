@@ -1,0 +1,7 @@
+alias sl='ls'
+alias erdogox_flash="teensy-loader-cli -mmcu=atmega32u4 -w"
+
+export BROWSER=firefox
+
+gpg-connect-agent /bye
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
