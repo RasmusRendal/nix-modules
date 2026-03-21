@@ -19,6 +19,7 @@
         firefox = ./modules/firefox;
         git = import ./modules/git;
         home = import ./modules/home;
+        sway = import ./modules/sway;
         niri = import ./modules/niri;
         rasmus-trix = import ./modules/rasmus-trix;
         zsh = ./modules/zsh;

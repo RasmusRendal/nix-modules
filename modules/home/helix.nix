@@ -20,7 +20,7 @@
         black
       ];
     settings = {
-      theme = "fleet_dark";
+      theme = "mytheme";
       editor = {
         rulers = [ 80 ];
         soft-wrap.enable = true;
@@ -41,5 +41,6 @@
         formatter.command = "${pkgs.nixfmt-rfc-style}/bin/nixfmt";
       }
     ];
+    themes.mytheme = import ./helix_mytheme.nix;
   };
 }
