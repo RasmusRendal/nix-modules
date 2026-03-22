@@ -27,4 +27,5 @@ while true
             end
         end
     end
+    sleep 1
 end
