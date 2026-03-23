@@ -22,7 +22,7 @@
         sway = import ./modules/sway;
         niri = import ./modules/niri;
         rasmus-trix = import ./modules/rasmus-trix;
-        zsh = ./modules/zsh;
+        zsh = import ./modules/zsh;
       };
     };
 }

@@ -20,12 +20,18 @@ set $workspace_8 parenright
 set $workspace_9 plus
 set $workspace_10 bracketright
 
-output * bg /home/rendal/babel.jpg fill
+output * bg ~/babel.jpg fill
 
 input type:keyboard {
    xkb_layout "us"
    xkb_variant "dvp"
    xkb_options "compose:ralt"
+}
+
+input type:touchpad {
+    dwt enabled
+    tap enabled
+    middle_emulation enabled
 }
 
 ### Key bindings
@@ -201,3 +207,7 @@ corner_radius 3
 include ./outputs
 
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+
+exec swaync
+bindsym $mod+Shift+n exec swaync-client -t -sw
+bindsym $mod+Shift+a exec swaync-client -a 0 -sw
