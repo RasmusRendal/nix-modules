@@ -10,6 +10,19 @@ let
     rev = "f9d72d23f5ce12da31967a6ecd15dcafa1355fa7";
     sha256 = "sha256-wiUocowz3uL3fTAxTfG3URhOwB2RrFWEmUnW4k0ETJ4=";
   };
+  # zsh hook which prints the current working directory in OSC7 format. When
+  # I open a new terminal with CTRL+SHIFT+N, the new terminal will have the
+  # same working directory as the existing one.
+  osc7_hook = ''
+    function print_osc7() {
+      if [ "$ZSH_SUBSHELL" -eq 0 ] ; then
+          printf "\033]7;file://$HOST/$PWD\033\\"
+      fi
+    }
+    autoload -Uz add-zsh-hook
+    add-zsh-hook -Uz chpwd print_osc7
+    print_osc7
+  '';
 in
 {
   programs.zsh = {
@@ -43,7 +56,7 @@ in
       zstyle ':completion:*' menu select
       zstyle ':completion:*' matcher-list ''' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
       zstyle ':completion:*:default' list-colors ''${(s.:.)LS_COLORS}
-      # source ${zsh-helix-mode}/zsh-helix-mode.plugin.zsh
+      ${osc7_hook}
     '';
   };
 
