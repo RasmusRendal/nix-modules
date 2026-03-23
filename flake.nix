@@ -23,6 +23,7 @@
         niri = import ./modules/niri;
         rasmus-trix = import ./modules/rasmus-trix;
         zsh = import ./modules/zsh;
+        language-tooling = import ./modules/language-tooling;
       };
     };
 }
