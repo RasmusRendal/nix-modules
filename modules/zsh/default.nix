@@ -53,6 +53,8 @@ in
       # CTRL left+right
       bindkey "^[[1;5C" forward-word
       bindkey "^[[1;5D" backward-word
+      # CTRL+backspace deletes words
+      bindkey '^H' backward-kill-word
       zstyle ':completion:*' menu select
       zstyle ':completion:*' matcher-list ''' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
       zstyle ':completion:*:default' list-colors ''${(s.:.)LS_COLORS}
