@@ -48,6 +48,8 @@ in
       grim
       # Select screen
       slurp
+      # Screenshot
+      sway-contrib.grimshot
       # Screen recorder
       wf-recorder
       # Notification daemon
