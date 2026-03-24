@@ -58,6 +58,8 @@ in
       swaylock
       # Notifications
       swaynotificationcenter
+      # swayidle
+      swayidle
     ];
 
     xdg.portal = {

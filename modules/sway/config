@@ -211,3 +211,9 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 exec swaync
 bindsym $mod+Shift+n exec swaync-client -t -sw
 bindsym $mod+Shift+a exec swaync-client -a 0 -sw
+
+exec swayidle -w \
+         timeout 600 'swaylock -f -c 000000' \
+         timeout 900 'swaymsg "output * power off"' \
+         resume 'swaymsg "output * power on"' \
+         before-sleep 'swaylock -f -c 000000'
