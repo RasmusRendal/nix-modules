@@ -61,6 +61,11 @@ in
       zstyle ':completion:*' matcher-list ''' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
       zstyle ':completion:*:default' list-colors ''${(s.:.)LS_COLORS}
       ${osc7_hook}
+
+      # Sets the window title based on the current executing program
+      function preexec {
+        print -Pn "\e]0;''${(q)1}\e\\"
+      }
     '';
   };
 
